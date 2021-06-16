@@ -20,7 +20,12 @@ public class NotificationAddon extends CloudAddon {
 
     @Override
     public void onEnable() {
-        this.setConfig(new NotificationConfig("&8┃ &fNotify &8➜ &7Service &a%serviceName% &7is now &astarting&7.", "&8┃ &fNotify &8➜ &7Service &2%serviceName% &7is now &2online&7.", "&8┃ &fNotify &8➜ &7Service &c%serviceName% &7is now &cstopping&7.", "&8┃ &fNotify &8➜ &7Service &4%serviceName% &7is now &4offline&7."));
+        this.setConfig(new NotificationConfig(
+		"&8┃ &fNotify &8➜ &7Service &a%serviceName% &7is now &astarting&7.", 
+		"&8┃ &fNotify &8➜ &7Service &2%serviceName% &7is now &2online&7.",
+		"&8┃ &fNotify &8➜ &7Service &c%serviceName% &7is now &cstopping&7.", 
+		"&8┃ &fNotify &8➜ &7Service &4%serviceName% &7is now &4offline&7.")
+        );
         switch (CloudAPI.getAPI().getLibraryType()) {
             case BUNGEECORD:
                 CloudAPI.getAPI().getEventManager().registerEvent(new CloudBungeeEvent());
