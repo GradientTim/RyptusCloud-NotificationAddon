@@ -23,29 +23,27 @@ public class CloudVelocityEvent extends LibraryEvent {
         VelocityCloudLibrary.getService().getVelocityServer().getAllPlayers().forEach(player -> {
             NodePlayer nodePlayer = CloudAPI.getAPI().getNodePlayer(player.getUniqueId());
             if (nodePlayer == null) return;
-            if (nodePlayer.getPermissions().contains("ryptuscloud.addons.notify")) {
-                switch (serviceConnectionType) {
-                    case STARTING:
-                        if (nodePlayer.hasPermission("notification.notify.*") || nodePlayer.hasPermission("notification.notify.starting")) {
-                            player.sendMessage(replaceMessage(service, notificationConfig.getStarting()));
-                        }
-                        break;
-                    case ONLINE:
-                        if (nodePlayer.hasPermission("notification.notify.*") || nodePlayer.hasPermission("notification.notify.online")) {
-                            player.sendMessage(replaceMessage(service, notificationConfig.getOnline()));
-                        }
-                        break;
-                    case STOPPING:
-                        if (nodePlayer.hasPermission("notification.notify.*") || nodePlayer.hasPermission("notification.notify.stopping")) {
-                            player.sendMessage(replaceMessage(service, notificationConfig.getStopping()));
-                        }
-                        break;
-                    case STOPPED:
-                        if (nodePlayer.hasPermission("notification.notify.*") || nodePlayer.hasPermission("notification.notify.stopped")) {
-                            player.sendMessage(replaceMessage(service, notificationConfig.getOffline()));
-                        }
-                        break;
-                }
+            switch (serviceConnectionType) {
+                case STARTING:
+                    if (nodePlayer.hasPermission("notification.notify.*") || nodePlayer.hasPermission("notification.notify.starting")) {
+                        player.sendMessage(replaceMessage(service, notificationConfig.getStarting()));
+                    }
+                    break;
+                case ONLINE:
+                    if (nodePlayer.hasPermission("notification.notify.*") || nodePlayer.hasPermission("notification.notify.online")) {
+                        player.sendMessage(replaceMessage(service, notificationConfig.getOnline()));
+                    }
+                    break;
+                case STOPPING:
+                    if (nodePlayer.hasPermission("notification.notify.*") || nodePlayer.hasPermission("notification.notify.stopping")) {
+                        player.sendMessage(replaceMessage(service, notificationConfig.getStopping()));
+                    }
+                    break;
+                case STOPPED:
+                    if (nodePlayer.hasPermission("notification.notify.*") || nodePlayer.hasPermission("notification.notify.stopped")) {
+                        player.sendMessage(replaceMessage(service, notificationConfig.getOffline()));
+                    }
+                    break;
             }
         });
     }
@@ -54,7 +52,7 @@ public class CloudVelocityEvent extends LibraryEvent {
         return TextComponent.of(message
                 .replace("%serviceName%", service.getServiceName()).replace("%nodeService%", service.getNodeService())
                 .replace("%serviceId%", service.getServiceId()).replace("%serviceGameId%", service.getServiceGameId())
-                .replace("%serviceGroup%", service.getServiceGroup()).replace("%servicePort%", String.valueOf(service.getServicePort())).replace("&", "§"));
+                .replace("%serviceGroup%", service.getServiceGroup()).replace("%servicePort%", String.valueOf(service.getServicePort())).replace("&", "ยง"));
     }
 
 }
