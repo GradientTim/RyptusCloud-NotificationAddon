@@ -15,12 +15,21 @@ Twitter: [@RyptusMediaDE](https://twitter.com/RyptusMediaDE)
 
 | Permissions |
 | :---: |
-| All = ryptuscloud.notification.notify.* |
-| ---+--- |
-| Starting: ryptuscloud.notification.notify.starting |
-| Online: ryptuscloud.notification.notify.online |
-| Stopping: ryptuscloud.notification.notify.stopping |
-| Offline: ryptuscloud.notification.notify.stopped |
+| ryptuscloud.notification.notify.* |
+| ---+ or +--- |
+| ryptuscloud.notification.notify.starting |
+| ryptuscloud.notification.notify.online |
+| ryptuscloud.notification.notify.stopping |
+| ryptuscloud.notification.notify.stopped |
+
+| Placeholder | Description |
+| :---: | :---: |
+| %serviceName% | Get the name of the service. |
+| %nodeService% | Get the name of the node. |
+| %serviceId% | Get the id from the service. |
+| %serviceGameId% | Get the gameId from the service. |
+| %serviceGroup% | Get the CloudGroup name of the service. |
+| %servicePort% | Get the port of the service. |
 
 ## Download
 Official Download link here: [NotificationAddon](https://RyptusMedia.de/ryptuscloud/addons/?id=0) (Not available)
