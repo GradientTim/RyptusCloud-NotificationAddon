@@ -52,7 +52,7 @@ public class CloudVelocityEvent extends LibraryEvent {
         return TextComponent.of(message
                 .replace("%serviceName%", service.getServiceName()).replace("%nodeService%", service.getNodeService())
                 .replace("%serviceId%", service.getServiceId()).replace("%serviceGameId%", service.getServiceGameId())
-                .replace("%serviceGroup%", service.getServiceGroup()).replace("%servicePort%", String.valueOf(service.getServicePort())).replace("&", "ยง"));
+                .replace("%serviceGroup%", service.getServiceGroup()).replace("%servicePort%", String.valueOf(service.getServicePort())).replace("&", "§"));
     }
 
 }
