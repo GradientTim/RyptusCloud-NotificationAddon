@@ -1,16 +1,17 @@
 package de.ryptusmedia.ryptuscloud.addons.config;
 
-import java.io.Serializable;
+import de.ryptusmedia.minecraft.cloudsystem.ryptuscloud.utilities.annotions.AddonConfig;
 
-public class NotificationConfig implements Serializable {
+@AddonConfig(configName = "NotificationAddon")
+public class NotificationConfig {
 
     private final String starting, online, stopping, offline;
 
-    public NotificationConfig(String starting, String online, String stopping, String offline) {
-        this.starting = starting;
-        this.online = online;
-        this.stopping = stopping;
-        this.offline = offline;
+    public NotificationConfig() {
+        this.starting = "&8┃ &fNotify &8➜ &7Service &a%serviceName% &7is now &astarting&7.";
+        this.online = "&8┃ &fNotify &8➜ &7Service &2%serviceName% &7is now &2online&7.";
+        this.stopping = "&8┃ &fNotify &8➜ &7Service &c%serviceName% &7is now &cstopping&7.";
+        this.offline = "&8┃ &fNotify &8➜ &7Service &4%serviceName% &7is now &4offline&7.";
     }
 
     public String getStarting() {
