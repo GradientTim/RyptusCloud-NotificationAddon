@@ -2,11 +2,8 @@ package de.ryptusmedia.ryptuscloud.addons.event;
 
 import de.ryptusmedia.minecraft.cloudsystem.ryptuscloud.api.CloudAPI;
 import de.ryptusmedia.minecraft.cloudsystem.ryptuscloud.event.LibraryEvent;
-import de.ryptusmedia.minecraft.cloudsystem.ryptuscloud.packet.CloudPacket;
-import de.ryptusmedia.minecraft.cloudsystem.ryptuscloud.player.NodeOfflinePlayer;
 import de.ryptusmedia.minecraft.cloudsystem.ryptuscloud.player.NodePlayer;
-import de.ryptusmedia.minecraft.cloudsystem.ryptuscloud.utilities.config.PacketConfig;
-import de.ryptusmedia.minecraft.cloudsystem.ryptuscloud.utilities.enums.*;
+import de.ryptusmedia.minecraft.cloudsystem.ryptuscloud.utilities.enums.ServiceConnectionType;
 import de.ryptusmedia.minecraft.cloudsystem.ryptuscloud.utilities.network.service.Service;
 import de.ryptusmedia.ryptuscloud.addons.NotificationAddon;
 import de.ryptusmedia.ryptuscloud.addons.config.NotificationConfig;
@@ -20,7 +17,7 @@ public class CloudBungeeEvent extends LibraryEvent {
     }
 
     public void notifyPlayers(Service service, ServiceConnectionType serviceConnectionType) {
-        NotificationConfig notificationConfig = (NotificationConfig) NotificationAddon.getAddon().getConfig();
+        NotificationConfig notificationConfig = NotificationAddon.getAddon().getConfig(new NotificationConfig());
         if (notificationConfig == null) return;
         ProxyServer.getInstance().getPlayers().forEach(proxiedPlayer -> {
             NodePlayer nodePlayer = CloudAPI.getAPI().getNodePlayer(proxiedPlayer.getUniqueId());
@@ -54,7 +51,7 @@ public class CloudBungeeEvent extends LibraryEvent {
         return message
                 .replace("%serviceName%", service.getServiceName()).replace("%nodeService%", service.getNodeService())
                 .replace("%serviceId%", service.getServiceId()).replace("%serviceGameId%", service.getServiceGameId())
-                .replace("%serviceGroup%", service.getServiceGroup()).replace("%servicePort%", String.valueOf(service.getServicePort())).replace("&", "§");
+                .replace("%serviceGroup%", service.getServiceGroup()).replace("%servicePort%", String.valueOf(service.getServicePort())).replace("&", "ยง");
     }
 
 }
