@@ -18,11 +18,13 @@ public class CloudVelocityEvent extends LibraryEvent {
     }
 
     public void notifyPlayers(Service service, ServiceConnectionType serviceConnectionType) {
-        NotificationConfig notificationConfig = (NotificationConfig) NotificationAddon.getAddon().getConfig();
+        NotificationConfig notificationConfig = NotificationAddon.getAddon().getConfig(new NotificationConfig());
         if (notificationConfig == null) return;
         VelocityCloudLibrary.getService().getVelocityServer().getAllPlayers().forEach(player -> {
             NodePlayer nodePlayer = CloudAPI.getAPI().getNodePlayer(player.getUniqueId());
-            if (nodePlayer == null) return;
+            if (nodePlayer == null) {
+                return;
+            }
             switch (serviceConnectionType) {
                 case STARTING:
                     if (nodePlayer.hasPermission("notification.notify.*") || nodePlayer.hasPermission("notification.notify.starting")) {
@@ -52,7 +54,7 @@ public class CloudVelocityEvent extends LibraryEvent {
         return TextComponent.of(message
                 .replace("%serviceName%", service.getServiceName()).replace("%nodeService%", service.getNodeService())
                 .replace("%serviceId%", service.getServiceId()).replace("%serviceGameId%", service.getServiceGameId())
-                .replace("%serviceGroup%", service.getServiceGroup()).replace("%servicePort%", String.valueOf(service.getServicePort())).replace("&", "§"));
+                .replace("%serviceGroup%", service.getServiceGroup()).replace("%servicePort%", String.valueOf(service.getServicePort())).replace("&", "ยง"));
     }
 
 }
