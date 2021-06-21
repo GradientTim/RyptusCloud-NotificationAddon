@@ -1,5 +1,4 @@
 {
-  "packagePath": "de.ryptusmedia.ryptuscloud.addons",
-  "mainClass": "NotificationAddon",
-  "configClassPath": "de.ryptusmedia.ryptuscloud.addons.config.NotificationConfig"
+  "mainClassPath": "de.ryptusmedia.ryptuscloud.addons.NotificationAddon",
+  "addonClassPath": "de.ryptusmedia.ryptuscloud.addons.config.NotificationConfig"
 }
