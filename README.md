@@ -7,7 +7,7 @@ Twitter: [@RyptusMediaDE](https://twitter.com/RyptusMediaDE)
 
 ## Usage
 
-1) Download the latest [RyptusCloud](https://ryptusmedia.de/go/product/?id=1) (Not available) file.
+1) Download the latest [RyptusCloud](https://github.com/RyptusMedia/RyptusCloud) file.
 2) Make sure, the directory "***./RyptusCloud/storage/addons/proxy/***" is exist.
 3) Paste the addon in the target directory from step 2.
 4) Restart the RyptusCloud or restart the current Group.
@@ -30,6 +30,3 @@ Twitter: [@RyptusMediaDE](https://twitter.com/RyptusMediaDE)
 | %serviceGameId% | Get the gameId from the service. | String |
 | %serviceGroup% | Get the CloudGroup name of the service. | String |
 | %servicePort% | Get the port of the service. | Integer |
-
-## Download
-Official Download link here: [NotificationAddon](https://RyptusMedia.de/ryptuscloud/addons/?id=0) (Not available)
